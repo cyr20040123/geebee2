@@ -23,16 +23,16 @@
 	</div>
     <!--<script type="text/javascript">init();</script>-->
     <div id="control-panel" class="wide-container aero-div" align="center" style="display:none">
-        <input type="button" id="resetButton" value="Restart" onclick="init();"/>
-        <input type="button" id="backButton" value="Back" onclick="init(); cvs.style.display='none'; document.getElementById('menu').style.display = 'block'; document.getElementById('control-panel').style.display = 'none';"/>
-        <input type="button" value="Initial Ball Speed:" disabled style="margin-right:0em;"/>
-        <select id="speed-selector" onchange="selectSpeed();" style="margin-left:0em;">
+        <select id="speed-selector"  style="width: 40%;" onchange="selectSpeed();">
+            <option value=3 selected>Initial Ball Speed</option>
             <option value=2>2</option>
-            <option value=3 selected>3</option>
+            <option value=3>3</option>
             <option value=4>4</option>
             <option value=5>5</option>
         </select>
-        <input type="button" id="continueButton" value="Continue" onclick="gameContinue();"/>
+        <input type="button" id="continueButton" value="Continue" onclick="gameContinue();" style="width: 40%;"/>
+        <input type="button" id="resetButton" value="Restart" onclick="init();" style="width: 40%;"/>
+        <input type="button" id="backButton" value="Back"  style="width: 40%;" onclick="init(); cvs.style.display='none'; document.getElementById('menu').style.display = 'block'; document.getElementById('control-panel').style.display = 'none';"/>
         <audio id="brick-audio">
             <source = src="audio/bricks.mp3" type="audio/mp3"/>
         </audio>

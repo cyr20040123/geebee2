@@ -119,6 +119,13 @@ canvas {
 }
 
 /*=================== Button ===================*/
+#speed-selector{
+    background:rgba(30,30,30,0.5);
+    color:#F0F0F0;
+    border: none; 
+    font-size:1.7em;
+    text-align: center;
+}
 input[type="button"]{
 	border:none;
 	background:rgba(30,30,30,0.5);

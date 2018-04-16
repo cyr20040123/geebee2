@@ -673,8 +673,8 @@ function touchMoveHandler(e){
 
 function touchStartHandler(e){
     if(gamePause) return;
-    var relativeX = e.targetTouches[0].clientX - cvs.offsetLeft;
-    if(relativeX < (leftBoarder+rightBoarder)/2) {
+    var relativeX = e.targetTouches[0].clientX;
+    if(relativeX < document.body.clientWidth/2) {
         paddleMove = -1;
     }
     else{
