@@ -24,9 +24,9 @@ canvas {
     margin: 0 auto;
 }
 /*================== Aero Style ===================*/
+/*
 .aero-div{
     box-shadow: 0.5em 0.5em 1em rgba(50,50,50,0.5);
-    /*毛玻璃效果*/
     position: relative;
     background: rgba(128,128,128,0.4);
     overflow: hidden;
@@ -50,7 +50,7 @@ canvas {
     -ms-filter: blur(1em);
     -o-filter: blur(1em);
     filter: blur(1em);
-}
+}*/
 /*================= mini-container ===============*/
 .wide-container {
     margin:0 auto;
