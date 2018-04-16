@@ -16,8 +16,6 @@
         <br/>
         <input type="button" id="readmeButton" value="Read Me" onclick="window.open('geebee-readme.html');"/>
         <br/>
-		<button id="readmeButton" value="Read Me" onclick="window.open('geebee-readme.html');">Read Me</button>
-        <br/>
 		<input type="button" id="quitButton" value="Quit" onclick="window.opener=null; window.open('','_self'); window.close();"/>
         <!--Quit without noticing.-->
 		<br/>
@@ -27,13 +25,14 @@
     <div id="control-panel" class="wide-container aero-div" align="center" style="display:none">
         <input type="button" id="resetButton" value="Restart" onclick="init();"/>
         <input type="button" id="backButton" value="Back" onclick="init(); cvs.style.display='none'; document.getElementById('menu').style.display = 'block'; document.getElementById('control-panel').style.display = 'none';"/>
-        <input type="button" value="Initial Ball Speed:" disabled style="margin-right:0px;"/>
-        <select id="speed-selector" onchange="selectSpeed();" style="margin-left:0px;">
+        <input type="button" value="Initial Ball Speed:" disabled style="margin-right:0em;"/>
+        <select id="speed-selector" onchange="selectSpeed();" style="margin-left:0em;">
             <option value=2>2</option>
             <option value=3 selected>3</option>
             <option value=4>4</option>
             <option value=5>5</option>
         </select>
+        <input type="button" id="continueButton" value="Continue" onclick="gameContinue();"/>
         <audio id="brick-audio">
             <source = src="audio/bricks.mp3" type="audio/mp3"/>
         </audio>

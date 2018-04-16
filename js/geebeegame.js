@@ -325,7 +325,7 @@ function drawFlipper(){
 }
 
 function drawInfo(info,x=400,y=680,size=30,fill="#FCD",shadow="#000"){
-    ctx.font = size+"px Arial";
+    ctx.font = size/10+"em Arial";
     ctx.fillStyle = shadow;
     ctx.fillText(info, x-2, y-2);
     ctx.fillStyle = fill;
@@ -334,7 +334,7 @@ function drawInfo(info,x=400,y=680,size=30,fill="#FCD",shadow="#000"){
 
 function drawTime(){
     var sec = Math.floor(frames/60);
-    ctx.font = "24px Arial";
+    ctx.font = "2.4em Arial";
     ctx.fillStyle = "#000";
     ctx.fillText(sec+" sec left", 400-2, 40-2);
     if(sec>60) ctx.fillStyle = "#AEA";
@@ -418,7 +418,7 @@ function init(){
     setAllPixel(rightOctagonCode);//2 for octangons
 
     drawFlipper();
-    drawInfo("Click to START!");
+    drawInfo("Click Continue Button to START!");
     drawInfo("Move Paddle: Touch Screen or Use KEY [←][→] / [A][D]",400,720,20,"yellow");
     drawScore();
     drawInfo("Press a number (1~5) to set initial ball speed.",400,550,20,"#EEA");
@@ -461,10 +461,10 @@ function drawPaddle() {
 
 function drawScore() {
     var t=Math.floor(Math.log10(score+1));
-    ctx.font = "30px Arial";
+    ctx.font = "3.0em Arial";
     ctx.fillStyle = "rgb("+(150+t*20)+","+(220-t*12)+","+(220-t*8)+")";
     ctx.fillText("Score  "+score, 400, 600);
-    ctx.font = "24px Arial";
+    ctx.font = "2.4em Arial";
     ctx.fillStyle = "#EEE";
     ctx.fillText(value[leftOctagonCode], 263, 254);
     ctx.fillText(value[rightOctagonCode], 800-266, 254);
@@ -667,13 +667,12 @@ function touchMoveHandler(e){
     else{
         paddleMove = 1;
     }*/
-    if(e.targetTouches[0].pageY > 960) return;
+    if(gamePause) return;
     e.preventDefault();
 }
 
 function touchStartHandler(e){
-    if(e.targetTouches[0].pageY > 960) return;
-    gameContinue();
+    if(gamePause) return;
     var relativeX = e.targetTouches[0].clientX - cvs.offsetLeft;
     if(relativeX < (leftBoarder+rightBoarder)/2) {
         paddleMove = -1;
