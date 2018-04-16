@@ -67,7 +67,7 @@ function drawUpperBricks(reset=true){//reset=true: when initializing or when all
         for(j=0;j<10;j++){
             if(bricks[count] || reset){
                 drawBrick(tx,ty,violet,count);
-                value[count]=20;
+                value[count]=30;//score
                 bricks[count]=true;
                 upperEmpty=false;
             }
@@ -447,7 +447,7 @@ function drawBall() {
 }
 
 function drawPaddle() {
-    removePixel(paddleCode,0,400,cvs.width,550);
+    //removePixel(paddleCode,0,400,cvs.width,550);
     removePixel(paddleCode,0,700,cvs.width,cvs.height);
 
     var relativeX = Math.round(paddleX + ball.v * 1.5 * paddleMove);
@@ -455,7 +455,7 @@ function drawPaddle() {
     else if(relativeX > rightBoarder) paddleX = rightBoarder;
     else paddleX = relativeX;
 
-    drawRect(white, paddleX-paddleWidth/2, paddle1Y, paddleX+paddleWidth/2, paddle1Y+paddleHeight, paddleCode);
+    //drawRect(white, paddleX-paddleWidth/2, paddle1Y, paddleX+paddleWidth/2, paddle1Y+paddleHeight, paddleCode);
     drawRect(white, paddleX-paddleWidth/2, paddle2Y, paddleX+paddleWidth/2, paddle2Y+paddleHeight, paddleCode);
 }
 
@@ -688,6 +688,11 @@ function selectSpeed(){
     drawInfo("Initial Ball Speed: "+initialBallSpeed,400,520,28,"#333","#333");
     initialBallSpeed = t;
     drawInfo("Initial Ball Speed: "+initialBallSpeed,400,520,28);
+}
+
+function selectSize(){
+    var t = document.getElementById("size-selector").value;
+    ball.r = t;
 }
 
 function playAudio(type, reset=true){

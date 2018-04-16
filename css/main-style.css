@@ -119,7 +119,8 @@ canvas {
 }
 
 /*=================== Button ===================*/
-#speed-selector{
+#speed-selector,
+#size-selector{
     background:rgba(30,30,30,0.5);
     color:#F0F0F0;
     border: none; 
