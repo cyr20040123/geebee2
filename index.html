@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Gee Bee Game</title>
+<link rel="stylesheet" href="css/main-style.css" type="text/css" />
+<!--<script src="FileSaver/FileSaver.min.js"></script>-->
+<script src="js/geebeegame.js"></script>
+</head>
+<body>
+    <canvas id="cvs-cyr" height="800px" width="800px" onclick="gameContinue();" style="display:none;"></canvas>
+    <div id="menu" class="mini-container aero-div" align="center">
+	    <h2>Gee Bee</h2>
+	    <h3>Welcome to Gee Bee game.</h3>
+	    <input type="button" id="startButton" value="START" onclick="init(); cvs.style.display='block'; document.getElementById('menu').style.display = 'none'; document.getElementById('control-panel').style.display = 'block';"/>
+        <br/>
+        <input type="button" id="readmeButton" value="Read Me" onclick="window.open('geebee-readme.html');"/>
+        <br/>
+		<button id="readmeButton" value="Read Me" onclick="window.open('geebee-readme.html');">Read Me</button>
+        <br/>
+		<input type="button" id="quitButton" value="Quit" onclick="window.opener=null; window.open('','_self'); window.close();"/>
+        <!--Quit without noticing.-->
+		<br/>
+        <br/>
+	</div>
+    <!--<script type="text/javascript">init();</script>-->
+    <div id="control-panel" class="wide-container aero-div" align="center" style="display:none">
+        <input type="button" id="resetButton" value="Restart" onclick="init();"/>
+        <input type="button" id="backButton" value="Back" onclick="init(); cvs.style.display='none'; document.getElementById('menu').style.display = 'block'; document.getElementById('control-panel').style.display = 'none';"/>
+        <input type="button" value="Initial Ball Speed:" disabled style="margin-right:0px;"/>
+        <select id="speed-selector" onchange="selectSpeed();" style="margin-left:0px;">
+            <option value=2>2</option>
+            <option value=3 selected>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+        </select>
+        <audio id="brick-audio">
+            <source = src="audio/bricks.mp3" type="audio/mp3"/>
+        </audio>
+        <audio id="paddle-audio">
+            <source = src="audio/paddle.mp3" type="audio/mp3"/>
+        </audio>
+        <audio id="wall-audio">
+            <source = src="audio/wall.mp3" type="audio/mp3"/>
+        </audio>
+        <audio id="flipper-audio">
+            <source = src="audio/flipper.mp3" type="audio/mp3"/>
+        </audio>
+        <audio id="octagon-audio">
+            <source = src="audio/octagon.mp3" type="audio/mp3"/>
+        </audio>
+        <audio id="gameover-audio">
+            <source = src="audio/gameover.mp3" type="audio/mp3"/>
+        </audio>
+    </div>
+    <div id="bottom-info" align="center">
+		<p>COMP3421 Assignment 2 (c) CHENG Yiran Feb. 2018</p>
+	</div>
+</body>
+</html>
+<!-- REF:http://blog.csdn.net/nzb329/article/details/52054252 -->
