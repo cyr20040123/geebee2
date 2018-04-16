@@ -1,0 +1,163 @@
+/*================== General ==================*/
+body{
+    background: url("./../img/mainbackground.jpg") 0 / cover fixed;
+    font-family: helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, sans-serif;
+}
+div{
+    border: 0px;
+}
+#bottom-info{
+    background-color:  rgba(32,32,48,0.3);
+    width: 100%;
+}
+canvas {
+    width: 800px;
+    min-width: 800px;
+    max-width: 800px;
+    height: 800px;
+    min-height: 800px;
+    max-height: 800px;
+    background: #333;
+    display: block;
+    margin: 0 auto;
+}
+/*================== Aero Style ===================*/
+.aero-div{
+    box-shadow: 5px 5px 10px rgba(50,50,50,0.5);
+    /*毛玻璃效果*/
+    position: relative;
+    background: rgba(128,128,128,0.4);
+    overflow: hidden;
+}
+.aero-div::before{
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+
+    margin: -30px;
+    z-index: -1;
+
+    background-image: url("./../img/mainbackground.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    filter: url(blur.svg#blur);
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -ms-filter: blur(10px);
+    -o-filter: blur(10px);
+    filter: blur(10px);
+}
+/*================= mini-container ===============*/
+.wide-container {
+    margin:0 auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    padding: 0px;
+    width: 800px;
+    min-width: 800px;
+}
+.wide-container *{
+    display: inline;
+    min-height: 30px;
+    min-width: 100px;
+    margin: 10px;
+}
+.mini-container {
+    margin:0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 500px;
+    padding:10px;
+    width: 500px;
+    min-width: 500px;
+}
+.mini-container select{
+    margin:0;
+
+	border:1px solid #CCC;
+	
+    padding:10px;
+
+    max-width:427px;
+    width:100%;
+    min-width:100px;
+
+    background: rgba(255,255,255,0.5);
+}
+.mini-container input[type="button"]{
+    margin:5px;
+}
+.mini-container input{
+    margin:0;
+
+	border:1px solid #CCC;
+	
+    padding:10px;
+    padding-left: 3%;
+
+    max-width:400px;
+    width:100%;
+    min-width:100px;
+
+    background: rgba(255,255,255,0.5);
+}
+.mini-container input[type="reset"],
+.mini-container input[type="submit"],
+.mini-container input[type="button"]
+{
+    cursor:pointer;
+    max-width: 400px;
+    width: 50%;
+    min-width: 80px;
+}
+
+/*=================== Button ===================*/
+input[type="button"]{
+	border:none;
+	background:rgba(30,30,30,0.5);
+	color:#F0F0F0;
+	font-size:17px;
+}
+input[type="button"]:hover{
+    background:rgba(30,30,40,0.8);
+	-webkit-transition:background 0.3s ease-in-out;
+	-moz-transition:background 0.3s ease-in-out;
+	transition:background-color 0.3s ease-in-out;
+}
+input[type="button"]:active{
+    border:none;
+	box-shadow:inset 1px 1px 20px rgba(0, 0, 0, 0.8);
+}
+input[type="button"]:focus{
+    border:none;
+	box-shadow:inset 1px 1px 5px rgba(255, 255, 255, 0.5);
+}
+/* ========== FONTS ==========*/
+h1 {
+    font-size:40px;
+    text-shadow:2px 2px 4px #333;
+    color:#F0F0F0;
+}
+h2 {
+    font-size:32px;
+    text-shadow:1px 1px 4px #333;
+    color:#F0F0F0;
+}
+h3 {
+    font-size:24px;
+    font-weight: normal;
+    text-shadow:0.5px 0.5px 1px #333;
+    color:#F0F0F0;
+}
+p {
+    font-size:20px;
+    color:#EEE;
+}
+#readme p{
+    text-align: left;
+    padding-left: 10%;
+    padding-right: 10%;
+}

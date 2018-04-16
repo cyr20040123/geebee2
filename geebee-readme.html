@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gee Bee Instruction</title>
+<link rel="stylesheet" href="css/main-style.css" type="text/css" />
+<script>
+function displayLayoutImg(){
+    document.getElementById("gamepad").style.display="none";
+    document.getElementById("layout").style.display="block";
+    //alert(document.getElementById("layout").id);
+}
+function displayGamepadImg(){
+    document.getElementById("gamepad").style.display="block";
+    document.getElementById("layout").style.display="none";
+}
+</script>
+</head>
+<body>
+    <div id="readme" class="mini-container aero-div" style="width: 70%; max-width: 70%;"align="center">
+	    <h1>Gee Bee Instruction</h1>
+	    <h2>Elements of the game</h2>
+        <h3>↓ Click the picture to see more. ↓</h3>
+	    <img id="gamepad" src="instruction/gamepad.png" alt="gamepad image" style="width:90%; max-width: 800px;" onClick="displayLayoutImg();"/>
+        <img id="layout" src="instruction/layout.png" alt="layout image" style="width:90%; max-width: 800px; display: none;" onClick="displayGamepadImg();"/>
+        <br/>
+        <br/>
+        <h2>How to control? How to set speed?</h2>
+        <img src="instruction/settingandcontrol.png" alt="control image" style="width:90%; max-width: 800px;"/>
+        <br/>
+        <br/>
+        <h2>Special considerations and designs</h2>
+        <h3>1. Control the default ball speed.</h3>
+        <p>For the elders, the ball speed should not be too fast at the beginning for them to get accustomed to the pace of the game. So the default speed is 2 and it would be easy for them to get familiar with the rules.</p>
+        <h3>2. The paddle speed is comfortable.</h3>
+        <p>When controlled by keyboard, the paddle speed is depended on the speed of the ball. If the ball speed is high, the paddle speed will be high for a convenience operation.</p>
+        <h3>3. Reduce the number words in instructions.</h3>
+        <p>I reduce the words in instructions and use two replaceable pictures to introduce the layout and elements. It is much convenience for the elder to recognize each element.</p>
+        <h3>4. Reduce the influence of changing elements.</h3>
+        <p>The time is a changing element during the game period. Any changing element will affect user's focus. Therefore, I chose to use a relatively small font size to display the time.</p>
+        <h3>5. Auto set the focus to canvas.</h3>
+        <p>The game will set the key focus to canvas automatically during the game initialization in case of losing control as old people may not know the solution.</p>
+        
+        <h2>That's it. Enjoy your play!</h2>
+        <input type="button" id="readmeButton" value="Back to Game" onclick="window.opener=null; window.open('','_self'); window.close();"/>
+        <br/>
+	</div>
+    <div id="bottom-info" align="center">
+		<p>COMP3421 Assignment 1 (c) CHENG Yiran Feb. 2018</p>
+	</div>
+</body>
+</html>
