@@ -33,6 +33,7 @@ var leftEmpty = false, rightEmpty = false, upperEmpty = false;
 var gamePause = true;
 var frames = 10800;
 var initialBallSpeed = 3;
+var initialBallSize = 6;
 var paddleMove = 0;
 
 //document.addEventListener("mousemove", mouseMoveHandler, false);
@@ -371,8 +372,11 @@ function removePixel(code,x1=0,y1=0,x2=cvs.width,y2=cvs.height) {
 function initBall() {
     ball.x = 400; ball.y = 680;
     ball.a = Math.PI * (0.5 + (Math.random() * 0.1 + 0.2) * (Math.floor(Math.random() * 1.99)*2 - 1));
+    if(document.getElementById("size-selector").value >= 3 && document.getElementById("size-selector").value <=9 ){
+        initialBallSize = document.getElementById("size-selector").value;
+    }
     ball.v = initialBallSpeed;
-    ball.r = 6;
+    ball.r = initialBallSize;
     setSpeed();
     //0.2~0.3 0.7~0.8 -> -0.3~-0.2 0.2~0.3
 }
@@ -418,10 +422,10 @@ function init(){
     setAllPixel(rightOctagonCode);//2 for octangons
 
     drawFlipper();
-    drawInfo("Click Continue Button to START!");
+    drawInfo("Touch to START!");
     drawInfo("Move Paddle: Touch Screen or Use KEY [←][→] / [A][D]",400,720,20,"yellow");
     drawScore();
-    drawInfo("Press a number (1~5) to set initial ball speed.",400,550,20,"#EEA");
+    //drawInfo("Press a number (1~5) to set initial ball speed.",400,550,20,"#EEA");
     drawTime();
     
     drawUpperBricks();
@@ -593,7 +597,7 @@ function refresh() {
         initBall();
         life --;
         if(life == 0) drawInfo("No ball left. Game Over!");
-        else drawInfo(life+" ball"+(life==1?"":"s")+" left. Click to continue.");
+        else drawInfo(life+" ball"+(life==1?"":"s")+" left. Touch to continue.");
         gamePause = true;
     }
     if(frames < 15){
@@ -631,6 +635,7 @@ function keyUpHandler(e) {
         paddleMove = 0;
         return;
     }
+    e.preventDefault();
 }
 
 function keyDownHandler(e) {
@@ -652,6 +657,7 @@ function keyDownHandler(e) {
         paddleMove = 0;
         if (gamePause) gameContinue();
     }
+    e.preventDefault();
 }
 
 function touchLeaveHandler(e){
@@ -692,6 +698,7 @@ function selectSpeed(){
 
 function selectSize(){
     var t = document.getElementById("size-selector").value;
+    initialBallSize = t;
     ball.r = t;
 }
 
