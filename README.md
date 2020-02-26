@@ -1,2 +1,2 @@
 # geebee2
-Fucking Gee Bee Game
+A Gee Bee Game
