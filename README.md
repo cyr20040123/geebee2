@@ -1,2 +1,2 @@
 # geebee2
-A Gee Bee Game
+A Gee Bee game for mobile.
